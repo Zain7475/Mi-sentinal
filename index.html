@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Mi Sentinal--Employee Work Details</title>
+  </head>
+  <body>
+    <!-- main-container that goes till end-->
+    <div class="main-wrapper d-flex">
+      <div class="sidebar" id="side_nav">
+        <div class="header-box px-2 pt-3 pb-4">
+          <div class="logo d-flex justify-content-center mt-3">
+            <a class="text-decoration-none" href="#">
+              <img src="assets/Graphs-removebg-preview.png" alt="" />
+            </a>
+          </div>
+          <div class="cross mt-2">
+            <button class="btn d-block close-btn px-1 py-0 text-white">
+              <img src="assets/close.png" width="10px" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <ul class="custom-ul list-unstyled px-1">
+          <li>
+            <a
+              href="#"
+              class="text-decoration-none px-2 text-light py-3 d-block"
+            >
+              <span>
+                <img src="assets/home.png" alt="" />
+              </span>
+              <span class="ps-2 other">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-decoration-none text-light px-2 py-3 d-block"
+            >
+              <span>
+                <img src="assets/group.png" alt="" />
+              </span>
+              <span class="ps-2 other">Users</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-decoration-none text-light px-2 py-3 d-block"
+            >
+              <span>
+                <img src="assets/customer.png" alt="" />
+              </span>
+              <span class="ps-2 other">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-decoration-none text-light px-2 py-3 d-block"
+            >
+              <span>
+                <img src="assets/settings.png" alt="" />
+              </span>
+              <span class="ps-2 other">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-decoration-none text-light px-2 py-3 d-block"
+            >
+              <span>
+                <img src="assets/settings.png" alt="" />
+              </span>
+              <span class="ps-1 news">News & announcements</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <nav class="navbar navbar-expand-md py-2 mb-5 border-bottom">
+          <div class="container-fluid">
+            <div
+              class="d-flex justify-content-between align-items-baseline d-block"
+            >
+              <button class="btn open-btn">
+                <img src="assets/menu.png" alt="" />
+              </button>
+              <h6 style="color: #aca6a1" class="fs-5">Hi,Admin!</h6>
+            </div>
+            <div class="right-nav d-flex justify-content-between">
+              <!-- profile -->
+              <div class="position-relative">
+                <a href="#" class="text-decoration-none green-circle">
+                  <img
+                    class="img-fluid rounded-circle border"
+                    src="assets/team1.jpg"
+                    width="50px"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <!-- bell -->
+              <div class="position-relative ms-3">
+                <a href="#" class="text-decoration-none red-circle">
+                  <img src="assets/bell.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <h6 style="font-weight: 400; color: #254976;" class="fs-5 mb-4">Billing</h6>
+          <!-- upper two columns -->
+          <div class="row mb-3">
+            <!-- chart col -->
+            <div class="col-lg-6">
+              <div class="my-shadow mb-3">
+                <div class="container-fluid">
+                  <!-- nesting row within first col -->
+                  <div class="row pt-4">
+                    <!-- first col -->
+                    <div class="col-md-4">
+                      <div style="height: 76px;"
+                        class="d-md-flex justify-content-center align-items-center"
+                      >
+                        <img src="assets/index.html.png" width="76px" alt="" />
+                      </div>
+                    </div>
+                    <!-- second-col -->
+                    <div class="col-md-4">
+                      <div class="company-details">
+                        <h6 class="mb-3">Sentinal Group Security</h6>
+                        <h6 class="mb-3">+7676664565667</h6>
+                        <h6 class="mb-3">sgs@sentinal.co.uk</h6>
+                      </div>
+                    </div>
+                    <!-- third-col -->
+                    <div class="col-md-4">
+                      <div class="licences">
+                        <h6 style="width: 138px;" class="mb-3">Licenses (no of employees)</h6>
+                        <h6>Assigned</h6>
+                      </div>
+                      <!-- donut chart -->
+                      <div class="chart-wrapper d-flex align-items-center">
+                        <!-- buttons -->
+                        <div style="width: fit-content;" class="d-flex flex-column">
+                          <!-- button container -->
+                          <div class="d-flex flex-column">
+                            <button onclick="decreaseSlice1()" class="btn-1 mb-3 border-0">
+                              <img src="assets/arrow-up.png" width="10px" alt="">
+                            </button>
+    
+                            <button onclick="increaseSlice1()" class="btn-2 border-0">
+                              <img src="assets/arrow-down.png" width="10px" alt="">
+                            </button> 
+    
+                          </div>                   
+                        </div>
+                        <!-- chart -->
+                        <div>
+                          <div
+                            style="width: 80px; height: 80px"
+                            id="donutChart"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <!-- second col -->
+            <div class="col-lg-6">
+              <div class="my-shadow mb-3">
+                <div class="container-fluid">
+                  <!-- nesting within the second col -->
+                  <div class="row pt-3">
+                    <!-- first-col -->
+                    <div class="col-md-6">
+                      <div class="basic-details align-items-baseline mb-2 d-flex">
+                        <!-- text -->
+                        <div style="width: 110px;" class="small-sc">
+                          <h6>Billing</h6>
+                        </div>
+                        <!-- radio -->
+                        <div style="width: 57px;">
+                          <div class="form-check form-one">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              <span style="font-size: 11px;">Manual</span>
+                            </label>
+                          </div>
+                          </div>
+
+                          <div>
+                          <div class="form-check form-one">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                             <span style="font-size: 11px;">Auto</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- status -->
+                      <div style="height: 23px;" class="basic-details d-flex flex-wrap mb-2">
+                        <div class="small-sc" style="width: 110px;">
+                          <h6>
+                            Status
+                          </h6>
+                        </div>
+                        <!-- Active -->
+                        <div class="d-flex align-items-center flex-wrap mb-2">
+                          <h6  style="font-size: 10px;color: #77c351;">ACTIVE</h6>
+                          <label class="check">
+                            <input type="checkbox" checked>
+                            <span class="my-checkmark"></span>    
+                          </label>
+                        </div>
+                      </div>
+                      <!-- payment method -->
+                      <div class="basic-details mb-2 d-flex flex-wrap">
+                        <div>
+                          <h6 class="small-sc" style="width: 110px;">Payment method</h6>
+                        </div>
+                        <div>
+                          <h6>
+                            ****
+                          </h6>
+                        </div>
+                      </div>
+                      <!-- unit price -->
+                      <div class="basic-details d-flex flex-wrap mb-2">
+                        <div>
+                          <h6 class="small-sc" style="width: 110px;">Unit price</h6>
+                        </div>
+                        <div>
+                          <h6>
+                            £ 23.00
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- second -->
+                    <div style="margin-top: 6px;" class="col-md-6">
+                      <!-- purchase date -->
+                      <div class="basic-details mb-2 d-flex flex-wrap">
+                        <div class="my-w">
+                          <h6>Initial purchase date</h6>
+                        </div>
+                        <div>
+                          <h6>
+                            21-07-2022
+                          </h6>
+                        </div>
+                      </div>
+                      <!-- Billing frequency -->
+                      <div class="basic-details d-flex flex-wrap mb-2">
+                        <div class="my-w">
+                          <h6>
+                            Billing frequency
+                          </h6>
+                        </div>
+                        <div>
+                          <h6>
+                            Monthly £ 23.00
+                          </h6>
+                        </div>
+                      </div>
+                      <!-- Next Billing -->
+                      <div class="basic-details d-flex flex-wrap mb-2">
+                        <div class="my-w">
+                          <h6>
+                            Next billing
+                          </h6>
+                        </div>
+                        <div>
+                          <h6>
+                            21-08-2022
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- last section -->
+          <h6 style="font-weight: 400; color: #254976;" class="fs-5 mb-4">Invoice</h6>
+          <!-- table-section -->
+          <div class="lower-main shadow-lower pt-4 pb-5 mb-4 rounded">
+            <div class="container-fluid">
+              <div class="d-flex">
+                <div class="buttons-wrapper m-auto">
+                  <button class="btn btn-sm border pe-5 py-1 rounded-0 mb-2">
+                    <span style="color: #254976; font-weight: 500; margin-right: 8px;">Observation:</span>
+                    <span>06/28/2023</span>
+                  </button>
+                  <!-- btn-2 -->
+                  <button class="btn btn-sm border pe-5 py-1 rounded-0 mb-2">
+                    <span style="color: #254976; font-weight: 500;margin-right: 8px;">Observation:</span>
+                    <span>06/28/2023</span>
+                  </button>
+                  <!-- btn-3 -->
+                  <button class="btn btn-sm border pe-3 py-1 rounded-0 mb-2">
+                    <span style="color: #254976; font-weight: 500; margin-right: 8px;">Plans:</span>
+                    <span style="margin-right: 8px;">All</span>
+                    <span><img src="assets/down-arrow-black.png" alt=""></span>
+                  </button>
+                  <!-- btn-4 -->
+                  <button class="btn btn-sm border pe-3 py-1 rounded-0 mb-2">
+                    <span style="color: #254976; font-weight: 500; margin-right: 8px;">Status:</span>
+                    <span style="margin-right: 4px;">All</span>
+                    <span><img src="assets/down-arrow-black.png" alt=""></span>
+                  </button>
+                </div>
+              </div>
+              <hr>
+              <!-- table goes from here -->
+              <div class="table-responsive mb-2">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col"> <h6 style="width: 64px;">Invoice ID</h6></th>
+                      <th scope="col"><h6 style="width: 64px;">Date Added</h6></th>
+                      <th scope="col"><h6 style="width: 64px;">Due Date</h6></th>
+                      <th scope="col"><h6 style="width: 64px;">Licenses</h6></th>
+                      <th scope="col"><h6 style="width: 64px;">Amount</h6></th>
+                      <th scope="col"><h6 style="width: 64px;">Status</h6></th>
+                      <th scope="col"><h6 style="width: 64px;">Paid</h6></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="background-color: #f5f7fb;">
+                      <td style="color: blue; text-decoration: underline; font-weight: 500;">MIP-28-9-22</td>
+                      <td class="text-muted">08-07-2022</td>
+                      <td class="text-muted">21-07-2022</td>
+                      <td class="text-muted">2</td>
+                      <td class="text-muted">£ 20.0</td>
+                      <td style="font-weight: 500;" class="text-success">PAID</td>
+                      <td>08-07-2022</td>
+                    </tr>
+                    <tr>
+                      <td style="color: blue; text-decoration: underline; font-weight: 500;">MIP-28-9-22</td>
+                      <td class="text-muted">21-07-2022</td>
+                      <td class="text-muted">21-07-2022</td>
+                      <td class="text-muted">2</td>
+                      <td class="text-muted">£ 20.0</td>
+                      <td style="font-weight: 500;" class="text-success">PAID</td>
+                      <td class="text-muted">08-07-2022</td>
+                    </tr>
+                    <tr style="background-color: #f5f7fb;">
+                      <td style="color: blue; text-decoration: underline; font-weight: 500;">MIP-28-9-22</td>
+                      <td class="text-muted">08-07-2022</td>
+                      <td class="text-muted">21-07-2022</td>
+                      <td class="text-muted">2</td>
+                      <td class="text-muted">£ 20.0</td>
+                      <td style="font-weight: 500;" class="text-warning">DUE</td>
+                      <td style="font-weight: 500;" class="text-danger">PAY NOW</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- pagination bar -->
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
